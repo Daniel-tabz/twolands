@@ -2026,3 +2026,63 @@ footer .social a img {
     width: 100%;
   }
 }
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  cursor: default;
+  font-weight: 400;
+  font-family: 'Urbanist', sans-serif;
+}
+
+body{
+  background: #000000;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: 3vw;
+  line-height: 150%;
+  font-family: demo;
+  color: #FFF;
+  background: linear-gradient(to right, #FFBF19 50%, #ffffff 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: all 3s;
+}
+
+h2:hover {
+  background-position: 0 0;
+  border-bottom: 1px solid #FFBF19;
+}
+
+p {
+  color: #FFF;
+  font-size: 1.1vw;
+  font-weight: 400;
+  line-height: 2vw;
+}
+
+span {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.transak-off {
+  display: none;
+}
+
+.transak-on {
+  display: block;
+}
+
+.wallet-flex {
+  display: flex;
+}
+
+.flex-third {
+  width: 33.33%;
+}

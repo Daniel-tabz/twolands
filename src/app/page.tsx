@@ -1,3 +1,5 @@
+"use client"
+
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
@@ -53,18 +55,35 @@ import l8 from "../../public/images/l8.png"
 import l9 from "../../public/images/l9.png"
 import l10 from "../../public/images/l10.png"
 import l11 from "../../public/images/l11.png"
+import { useEffect, useState } from "react";
 
 
 
 
 export default function Home() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.pageYOffset > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleNavbar = () => {
+    setIsActive(!isActive);
+  };
+
+  const closeNavbar = () => {
+    setIsActive(false);
+  };
+
   return (
     <>
       <link rel="icon" href="assets/images/logo.png" />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-      />
       <meta charSet="UTF-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -85,8 +104,10 @@ export default function Home() {
       />
       <title>TWO LANDS</title>
       <header className="header">
-        <nav className="navbar">
-          <div className="center-menu">
+        <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} 
+        style={{ backgroundColor: isScrolled ? '#000000' : 'transparent' }}
+        >
+          <div className={`center-menu ${isActive ? 'active' : ''}`} onClick={closeNavbar}>
             <a href="#about" className="tg">
               <li>ABOUT</li>
             </a>
@@ -103,14 +124,14 @@ export default function Home() {
               <li>ROADMAP</li>
             </a>
           </div>
-          <div className="navbar-toggle">
+          <div className="navbar-toggle" onClick={toggleNavbar}>
             <span />
             <span />
             <span />
           </div>
         </nav>
       </header>
-      <div className="body">
+      <div className="body" onClick={closeNavbar}>
         <div className="home" id="home" />
         <div className="hero-section">
           <Image
@@ -154,9 +175,9 @@ export default function Home() {
                   height={500}
                 />
               </a>
-              <button>
+              {/* <button>
                   Buy with Credit Card
-              </button>
+              </button> */}
             </div>
             <div className="right">
               <Image
