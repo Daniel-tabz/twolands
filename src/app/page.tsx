@@ -1,64 +1,63 @@
-"use client"
+"use client";
 
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import heading from "../../public/images/heading.png";
-import btn from "../../public/images/btn.png"
-import btn1 from "../../public/images/btn1.png"
-import hero from "../../public/images/heroIMG.png"
-import logo from "../../public/images/logo.png"
-import instagram from "../../public/images/instagram.png"
-import youtube from "../../public/images/youtube.png"
-import telegram from "../../public/images/telegram.png"
-import twitter from "../../public/images/twitter.png"
-import linkedin from "../../public/images/LinkedIn.png"
-import tiktok from "../../public/images/tiktok.png"
-import speaker from "../../public/images/speaker.png"
-import heroCover from "../../public/images/heroCover.png"
-import about from "../../public/images/aboutIMG.png"
-import eco from "../../public/images/ecoIMG.png"
-import watch from "../../public/images/watch.png"
-import iframeImage from "../../public/images/Iframe.png"
-import line from "../../public/images/line.png"
-import bar1 from "../../public/images/bar1.png"
-import bar2 from "../../public/images/bar2.png"
-import bar3 from "../../public/images/bar3.png"
-import bar4 from "../../public/images/bar4.png"
-import bar5 from "../../public/images/bar5.png"
-import bar6 from "../../public/images/bar6.png"
-import bar7 from "../../public/images/bar7.png"
-import bar8 from "../../public/images/bar8.png"
-import bar9 from "../../public/images/bar9.png"
-import bar10 from "../../public/images/bar10.png"
-import bar11 from "../../public/images/bar11.png"
-import bar12 from "../../public/images/bar12.png"
-import road from "../../public/images/road.png"
-import check from "../../public/images/check.png"
-import found1 from "../../public/images/found1.png"
-import found2 from "../../public/images/found2.png"
-import colab1 from "../../public/images/colab1.png"
-import ad1 from "../../public/images/ad1.png"
-import ad2 from "../../public/images/ad2.png"
-import ad3 from "../../public/images/ad3.png"
-import ad4 from "../../public/images/ad4.png"
-import ad5 from "../../public/images/ad5.png"
-import ad6 from "../../public/images/ad6.png"
-import l1 from "../../public/images/l1.png"
-import l2 from "../../public/images/l2.png"
-import l3 from "../../public/images/l3.png"
-import l4 from "../../public/images/l4.png"
-import l5 from "../../public/images/l5.png"
-import l6 from "../../public/images/l6.png"
-import l7 from "../../public/images/l7.png"
-import l8 from "../../public/images/l8.png"
-import l9 from "../../public/images/l9.png"
-import l10 from "../../public/images/l10.png"
-import l11 from "../../public/images/l11.png"
+import btn from "../../public/images/btn.png";
+import btn1 from "../../public/images/btn1.png";
+import hero from "../../public/images/heroIMG.png";
+import logo from "../../public/images/logo.png";
+import instagram from "../../public/images/instagram.png";
+import youtube from "../../public/images/youtube.png";
+import telegram from "../../public/images/telegram.png";
+import twitter from "../../public/images/twitter.png";
+import linkedin from "../../public/images/LinkedIn.png";
+import tiktok from "../../public/images/tiktok.png";
+import speaker from "../../public/images/speaker.png";
+import heroCover from "../../public/images/heroCover.png";
+import about from "../../public/images/aboutIMG.png";
+import eco from "../../public/images/ecoIMG.png";
+import watch from "../../public/images/watch.png";
+import iframeImage from "../../public/images/Iframe.png";
+import line from "../../public/images/line.png";
+import bar1 from "../../public/images/bar1.png";
+import bar2 from "../../public/images/bar2.png";
+import bar3 from "../../public/images/bar3.png";
+import bar4 from "../../public/images/bar4.png";
+import bar5 from "../../public/images/bar5.png";
+import bar6 from "../../public/images/bar6.png";
+import bar7 from "../../public/images/bar7.png";
+import bar8 from "../../public/images/bar8.png";
+import bar9 from "../../public/images/bar9.png";
+import bar10 from "../../public/images/bar10.png";
+import bar11 from "../../public/images/bar11.png";
+import bar12 from "../../public/images/bar12.png";
+import road from "../../public/images/road.png";
+import check from "../../public/images/check.png";
+import found1 from "../../public/images/found1.png";
+import found2 from "../../public/images/found2.png";
+import colab1 from "../../public/images/colab1.png";
+import ad1 from "../../public/images/ad1.png";
+import ad2 from "../../public/images/ad2.png";
+import ad3 from "../../public/images/ad3.png";
+import ad4 from "../../public/images/ad4.png";
+import ad5 from "../../public/images/ad5.png";
+import ad6 from "../../public/images/ad6.png";
+import l1 from "../../public/images/l1.png";
+import l2 from "../../public/images/l2.png";
+import l3 from "../../public/images/l3.png";
+import l4 from "../../public/images/l4.png";
+import l5 from "../../public/images/l5.png";
+import l6 from "../../public/images/l6.png";
+import l7 from "../../public/images/l7.png";
+import l8 from "../../public/images/l8.png";
+import l9 from "../../public/images/l9.png";
+import l10 from "../../public/images/l10.png";
+import l11 from "../../public/images/l11.png";
 import { useEffect, useState } from "react";
-
-
-
+import { useConnect } from "wagmi";
+import ConnectWallet from "../components/ConnectWallet";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,8 +68,8 @@ export default function Home() {
       setIsScrolled(window.pageYOffset > 100);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleNavbar = () => {
@@ -80,6 +79,9 @@ export default function Home() {
   const closeNavbar = () => {
     setIsActive(false);
   };
+
+  const { connect, connectors, error, isLoading, pendingConnector } =
+    useConnect();
 
   return (
     <>
@@ -104,10 +106,14 @@ export default function Home() {
       />
       <title>TWO LANDS</title>
       <header className="header">
-        <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} 
-        style={{ backgroundColor: isScrolled ? '#000000' : 'transparent' }}
+        <nav
+          className={`navbar ${isScrolled ? "scrolled" : ""}`}
+          style={{ backgroundColor: isScrolled ? "#000000" : "transparent" }}
         >
-          <div className={`center-menu ${isActive ? 'active' : ''}`} onClick={closeNavbar}>
+          <div
+            className={`center-menu ${isActive ? "active" : ""}`}
+            onClick={closeNavbar}
+          >
             <a href="#about" className="tg">
               <li>ABOUT</li>
             </a>
@@ -156,98 +162,48 @@ export default function Home() {
                 target="_blank"
                 className="btn"
               >
-                <Image
-                  src={btn}
-                  alt="logo"
-                  width={10000}
-                  height={10000}
-                />
+                <Image src={btn} alt="logo" width={10000} height={10000} />
               </a>
               <a
                 href="Two-Lands-LitePaper.pdf"
                 target="_blank"
                 className="btn1"
               >
-                <Image
-                  src={btn1}
-                  alt="logo"
-                  width={500}
-                  height={500}
-                />
+                <Image src={btn1} alt="logo" width={500} height={500} />
               </a>
               {/* <button>
                   Buy with Credit Card
               </button> */}
             </div>
             <div className="right">
-              <Image
-                alt="logo"
-                src={hero}
-                width={5000}
-                height={5000}
-              />
+              <Image alt="logo" src={hero} width={5000} height={5000} />
             </div>
           </div>
           <div className="side-bar">
             <a href="#" className="logo">
-              <Image
-                src={logo}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={logo} alt="logo" width={1000} height={1000} />
             </a>
             <a href="https://www.instagram.com/twolandstoken/">
-              <Image
-                src={instagram}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={instagram} alt="logo" width={1000} height={1000} />
             </a>
             <a
               href="https://www.youtube.com/channel/UCj_kPkfbKRVHYW_3W23Ibgg"
               target="_blank"
             >
-              <Image
-                src={youtube}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={youtube} alt="logo" width={1000} height={1000} />
             </a>
             <a href="https://t.me/twolandstokenportal" target="_blank">
-              <Image
-                src={telegram}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={telegram} alt="logo" width={1000} height={1000} />
             </a>
             <a href="https://twitter.com/twolandstoken" target="_blank">
-              <Image
-                src={twitter}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={twitter} alt="logo" width={1000} height={1000} />
             </a>
             <a href="https://www.tiktok.com/@twolandstoken" target="_blank">
-              <Image
-                src={tiktok}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={tiktok} alt="logo" width={1000} height={1000} />
             </a>
             <div className="divid">
               <a href="#">
-                <Image
-                  src={speaker}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={speaker} alt="logo" width={1000} height={1000} />
               </a>
             </div>
           </div>
@@ -261,8 +217,9 @@ export default function Home() {
             width={1000}
           />
         </div>
-        <div className="buy-crypto">
+        <div className="buy-crypto flex flex-col gap-6">
           <h2>buy crypto with credit card</h2>
+          <ConnectWallet />
           <iframe
             width={400}
             height={720}
@@ -312,12 +269,7 @@ export default function Home() {
             </p>
           </div>
           <div className="right">
-            <Image
-              src={eco}
-              alt="logo"
-              width={2000}
-              height={2000}
-            />
+            <Image src={eco} alt="logo" width={2000} height={2000} />
           </div>
         </div>
         <div className="intro" id="intro">
@@ -373,12 +325,7 @@ export default function Home() {
             target="_blank"
             className="btn"
           >
-            <Image
-              src={watch}
-              alt="logo"
-              width={10000}
-              height={10000}
-            />
+            <Image src={watch} alt="logo" width={10000} height={10000} />
           </a>
         </div>
         <div className="sli carousel-container">
@@ -389,12 +336,7 @@ export default function Home() {
           </p>
           <div className="carousel">
             <div className="carousel-item">
-              <Image
-                src={iframeImage}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={iframeImage} alt="logo" width={1000} height={1000} />
             </div>
             <div className="carousel-item">
               <iframe
@@ -437,32 +379,17 @@ export default function Home() {
               <h3>1,000,000,000</h3>
               <p>Total Supply</p>
             </div>
-            <Image
-              src={line}
-              alt="logo"
-              width={1000}
-              height={1000}
-            />
+            <Image src={line} alt="logo" width={1000} height={1000} />
             <div className="box">
               <h3>346,950,000</h3>
               <p>Circulating Supply at Launch</p>
             </div>
-            <Image
-              src={line}
-              alt="logo"
-              width={1000}
-              height={1000}
-            />
+            <Image src={line} alt="logo" width={1000} height={1000} />
             <div className="box">
               <h3>5.0M</h3>
               <p>Target MC at Launch</p>
             </div>
-            <Image
-              src={line}
-              alt="logo"
-              width={1000}
-              height={1000}
-            />
+            <Image src={line} alt="logo" width={1000} height={1000} />
             <div className="box">
               <h3>0.005</h3>
               <p>Token Price at Launch</p>
@@ -471,72 +398,42 @@ export default function Home() {
           <div className="bars">
             <div className="left">
               <div className="box">
-                <Image
-                  src={bar1}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={bar1} alt="logo" width={1000} height={1000} />
                 <div className="value">
                   <p>Team</p>
                   <p>10%</p>
                 </div>
               </div>
               <div className="box">
-                <Image
-                  src={bar2}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={bar2} alt="logo" width={1000} height={1000} />
                 <div className="value">
                   <p>Seed Sale</p>
                   <p>8%</p>
                 </div>
               </div>
               <div className="box">
-                <Image
-                  src={bar3}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={bar3} alt="logo" width={1000} height={1000} />
                 <div className="value">
                   <p>Public Sale</p>
                   <p>15.5%</p>
                 </div>
               </div>
               <div className="box">
-                <Image
-                  src={bar4}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={bar4} alt="logo" width={1000} height={1000} />
                 <div className="value">
                   <p>Treasury</p>
                   <p>29.75%</p>
                 </div>
               </div>
               <div className="box">
-                <Image
-                  src={bar5}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={bar5} alt="logo" width={1000} height={1000} />
                 <div className="value">
                   <p>Contributors</p>
                   <p>3%</p>
                 </div>
               </div>
               <div className="box">
-                <Image
-                  src={bar6}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={bar6} alt="logo" width={1000} height={1000} />
                 <div className="value">
                   <p>Development</p>
                   <p>7%</p>
@@ -545,72 +442,42 @@ export default function Home() {
             </div>
             <div className="left">
               <div className="box">
-                <Image
-                  src={bar7}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={bar7} alt="logo" width={1000} height={1000} />
                 <div className="value">
                   <p>Games Pool</p>
                   <p>2.5%</p>
                 </div>
               </div>
               <div className="box">
-                <Image
-                  src={bar8}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={bar8} alt="logo" width={1000} height={1000} />
                 <div className="value">
                   <p>Private Sale</p>
                   <p>4.8%</p>
                 </div>
               </div>
               <div className="box">
-                <Image
-                  src={bar9}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={bar9} alt="logo" width={1000} height={1000} />
                 <div className="value">
                   <p>Dex Liquidity</p>
                   <p>9.25%</p>
                 </div>
               </div>
               <div className="box">
-                <Image
-                  src={bar10}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={bar10} alt="logo" width={1000} height={1000} />
                 <div className="value">
                   <p>The Hunt</p>
                   <p>1%</p>
                 </div>
               </div>
               <div className="box">
-                <Image
-                  src={bar11}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={bar11} alt="logo" width={1000} height={1000} />
                 <div className="value">
                   <p>Marketing</p>
                   <p>8%</p>
                 </div>
               </div>
               <div className="box">
-                <Image
-                  src={bar12}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={bar12} alt="logo" width={1000} height={1000} />
                 <div className="value">
                   <p>Burn</p>
                   <p>1.2%</p>
@@ -676,50 +543,25 @@ export default function Home() {
         </div>
         <div className="road" id="map">
           <h2>GIZA ROAD</h2>
-          <Image
-            src={road}
-            alt="logo"
-            width={1000}
-            height={1000}
-          />
+          <Image src={road} alt="logo" width={1000} height={1000} />
           <div className="box box1">
             <h3>Stage 1 : Pre-Dynastic</h3>
             <ul>
               <li>
                 Seed Sale{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>
                 Whitepaper V1{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>
                 Website v1 Launch{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>
                 Introductory Marketing{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
             </ul>
           </div>
@@ -728,75 +570,35 @@ export default function Home() {
             <ul>
               <li>
                 Early Consulting Partnerships
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>
                 Private Sale{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>
                 Website Update{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>
                 Two Lands Beer &amp; SpiritsPartnerships{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>
                 EDocuseries Filming{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>
                 Pyramid Scheme Alpha{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>
                 Pharaohs of Aaru Wireframing &amp; <br /> Game Design{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>
                 Litepaper V1{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
             </ul>
           </div>
@@ -806,32 +608,17 @@ export default function Home() {
               <li>Formal Product Development</li>
               <li>
                 Release of DocuseriesOfficial Trailer{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>
                 Basic Security Audit &amp; KYC{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>Private Sale Round 2</li>
               <li>Whitepaper V2</li>
               <li>
                 Website V2{" "}
-                <Image
-                  src={check}
-                  alt="logo"
-                  width={1000}
-                  height={1000}
-                />
+                <Image src={check} alt="logo" width={1000} height={1000} />
               </li>
               <li>Robot Team Donation</li>
               <li>Initial Global Marketing Campaign</li>
@@ -1126,96 +913,41 @@ export default function Home() {
           <h2>STRATEGIC PARTNERS</h2>
           <div className="row">
             <a href="#">
-              <Image
-                src={l1}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={l1} alt="logo" width={1000} height={1000} />
             </a>
             <a href="#">
-              <Image
-                src={l2}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={l2} alt="logo" width={1000} height={1000} />
             </a>
             <a href="#">
-              <Image
-                src={l3}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={l3} alt="logo" width={1000} height={1000} />
             </a>
             <a href="#">
-              <Image
-                src={l4}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={l4} alt="logo" width={1000} height={1000} />
             </a>
             <a href="#">
-              <Image
-                src={l5}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={l5} alt="logo" width={1000} height={1000} />
             </a>
           </div>
           <div className="row row2">
             <a href="#">
-              <Image
-                src={l6}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={l6} alt="logo" width={1000} height={1000} />
             </a>
             <a href="#">
-              <Image
-                src={l7}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={l7} alt="logo" width={1000} height={1000} />
             </a>
             <a href="#">
-              <Image
-                src={l8}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={l8} alt="logo" width={1000} height={1000} />
             </a>
             <a href="#">
-              <Image
-                src={l9}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={l9} alt="logo" width={1000} height={1000} />
             </a>
           </div>
           <div className="row">
             <a href="#">
-              <Image
-                src={l10}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={l10} alt="logo" width={1000} height={1000} />
             </a>
             <a href="#">
-              <Image
-                src={l11}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={l11} alt="logo" width={1000} height={1000} />
             </a>
           </div>
         </div>
@@ -1267,47 +999,22 @@ export default function Home() {
           <p> © 2023 Two Lands. All Rights Reserved</p>
           <div className="social">
             <a href="https://www.instagram.com/twolandstoken/" target="_blank">
-              <Image
-                src={instagram}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={instagram} alt="logo" width={1000} height={1000} />
             </a>
             <a href="https://t.me/twolandstokenportal" target="_blank">
-              <Image
-                src={telegram}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={telegram} alt="logo" width={1000} height={1000} />
             </a>
             <a href="https://twitter.com/twolandstoken" target="_blank">
-              <Image
-                src={twitter}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={twitter} alt="logo" width={1000} height={1000} />
             </a>
             <a href="http://tiktok.com/@twolandstoken" target="_blank">
-              <Image
-                src={tiktok}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={tiktok} alt="logo" width={1000} height={1000} />
             </a>
             <a
               href="https://www.youtube.com/channel/UCj_kPkfbKRVHYW_3W23Ibgg"
               target="_blank"
             >
-              <Image
-                src={youtube}
-                alt="logo"
-                width={1000}
-                height={1000}
-              />
+              <Image src={youtube} alt="logo" width={1000} height={1000} />
             </a>
           </div>
         </footer>
